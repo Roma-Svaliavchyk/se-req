@@ -1,6 +1,32 @@
 import axios from 'axios';
 console.log("axios conect");
 
+const getUser = async (userId) => { 
+  try {
+      
+      const response = await axios.get(`https://solar-energy-serv.onrender.com/luser`);
+      const user = response.data;
+      console.log(response.data);
+
+      // Запис даних користувача в змінні
+      const userEmail = user.email;
+      const userToken = user.token;
+
+      localStorage.setItem("token", user.token);
+      localStorage.setItem("email", user.email);
+
+      console.log('Email:', userEmail);
+      console.log('Token:', userToken);
+  } catch (error) {
+      console.error('Error fetching user:', error);
+  }
+};
+
+getUser();
+
+
+
+
 console.log(localStorage.getItem("token"));
 
 const form = document.querySelector('.form-acc-js');

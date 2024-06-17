@@ -1,0 +1,6 @@
+{
+    "routes": [
+      { "src": "/aut", "dest": "/html/aut.html" },
+      { "src": "/contact", "dest": "/contact.html" }
+    ]
+  }
